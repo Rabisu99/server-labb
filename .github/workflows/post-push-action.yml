@@ -6,7 +6,7 @@ name: Post CI maven & docker
 on:
   push:
     paths:
-      - "post-microservice/**"
+      - "backend/post-microservice/**"
 jobs:
   build:
 
@@ -21,7 +21,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      working-directory: ./post-microservice
+      working-directory: ./backend/post-microservice
       run: mvn -B package --file pom.xml
     - name: Build and Push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
@@ -29,7 +29,7 @@ jobs:
         image: rabisu/musu-social
         tags: message
         registry: docker.io
-        dockerfile: post-microservice/Dockerfile
-        directory: post-microservice/
+        dockerfile: backend/post-microservice/Dockerfile
+        directory: backend/post-microservice/
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}

@@ -6,7 +6,7 @@ name: Message CI maven & docker
 on:
   push:
     paths:
-      - "message-microservice/**"
+      - "backend/message-microservice/**"
 jobs:
   build:
 
@@ -21,7 +21,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      working-directory: ./message-microservice
+      working-directory: ./backend/message-microservice
       run: mvn -B package --file pom.xml
     - name: Build and Push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
@@ -29,7 +29,7 @@ jobs:
         image: rabisu/musu-social
         tags: message
         registry: docker.io
-        dockerfile: message-microservice/Dockerfile
-        directory: message-microservice/
+        dockerfile: backend/message-microservice/Dockerfile
+        directory: backend/message-microservice/
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
