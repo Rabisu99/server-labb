@@ -30,5 +30,6 @@ jobs:
         tags: message
         registry: docker.io
         dockerfile: message-microservice/Dockerfile
+        directory: message-microservice/
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
