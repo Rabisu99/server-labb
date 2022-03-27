@@ -29,6 +29,6 @@ jobs:
         image: rabisu/musu-social
         tags: message
         registry: docker.io
-        dockerfile: ./message-microservice/Dockerfile.ci
+        dockerfile: ./message-microservice/
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
