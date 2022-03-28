@@ -16,7 +16,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: rabisu/musu-social
-        tags: message
+        tags: musu-app
         registry: docker.io
         dockerfile: frontend/musu-app/Dockerfile
         directory: frontend/musu-app/
