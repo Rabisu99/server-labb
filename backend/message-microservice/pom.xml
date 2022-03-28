@@ -14,7 +14,7 @@
     <artifactId>serverlabb2</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>serverlabb2</name>
-    <description>Server Labb 2 HT2021</description>
+    <description>Server Labb2 HT2021</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

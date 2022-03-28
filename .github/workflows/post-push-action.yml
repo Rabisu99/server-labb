@@ -27,7 +27,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: rabisu/musu-social
-        tags: message
+        tags: post
         registry: docker.io
         dockerfile: backend/post-microservice/Dockerfile
         directory: backend/post-microservice/
