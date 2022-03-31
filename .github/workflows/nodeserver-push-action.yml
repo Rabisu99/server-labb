@@ -1,10 +1,10 @@
 
-name: nodejs-server CI docker
+name: nodeserver CI docker
 
 on:
   push:
     paths:
-      - "backend/nodejs-drawspace-server/**"
+      - "Backend/NodeServer/**"
 jobs:
   build:
 
@@ -15,10 +15,10 @@ jobs:
     - name: Build and Push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: rabisu/musu-social
-        tags: node-server
+        image: bruhski/mususocial
+        tags: nodeserver
         registry: docker.io
-        dockerfile: backend/nodejs-drawspace-server/Dockerfile
-        directory: backend/nodejs-drawspace-server/
+        dockerfile: Backend/NodeServer/Dockerfile
+        directory: Backend/NodeServer/
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
